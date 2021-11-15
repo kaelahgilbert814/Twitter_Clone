@@ -1,0 +1,43 @@
+{% extends "base.html" %}{% block content %} {% load static %}
+<section class="content">
+  <section class="post_form">
+    Post Form
+    <form action="/edit/{{post.id}}/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Name" value="{{post.name}}"/>
+      <textarea name="body" placeholder="What's on your mind?" value="{{post.body}}" ></textarea>
+      {% if post.image.url %}
+      <img class="post-border" src="{{ post.image.url }}" />
+      {% endif %}
+      <div class="my-icon">
+        <input type="file" name="image" />
+      </div>
+      <a class="update-button" href="{%  url 'index' %}" style="text-decoration: none; color:black;">Cancel</a>
+          <input class="update-button" type="submit" value="Update" />
+    </form>  
+  </section>
+  <section class="posts">
+    <ul>
+      {% for post in posts %}
+      <li>
+        {% load static %}
+        <img class="menu_icon js-menu-icon" src="{% static 'img/more.png' %}" />
+        <div class="logo">
+          {% load static %}
+          <img src="{% static 'img/user1.png' %}" />
+        </div>
+          <img class="post-border" src="{{ post.image.url }}"></br>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'js/post.js' %}"></script>
+</section>
+{% endblock %}

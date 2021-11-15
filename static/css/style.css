@@ -4,29 +4,33 @@ post table
 */
 
 body {
-  height: 100%;
-  background-color: teal;
+  height: 150%;
+  background-color: whitesmoke;
 }
 .content {
   max-width: 600px;
   height: 100%;
   margin: 0 auto;
-  border-left: 1px solid red;
-  border-right: 1px solid red;
+  border-left: 1px solid rgb(77, 75, 75);
+  border-right: 1px solid rgb(77, 75, 75);
 }
 .posts li {
   display: flex;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgb(77, 75, 75);
   position: relative;
 }
 .posts li .logo {
   flex-basis: 15%;
+  margin-top: 1px;
 }
 .posts .logo img {
   width: 40%;
+  margin-top: 13px;
+  margin-left: 3px;
 }
 .posts li .name_body {
   flex-basis: 85%;
+  margin-top: 6px;
 }
 .posts li .name_body .name {
   font-weight: bold;
@@ -35,6 +39,13 @@ body {
 .posts li .name_body .datetime {
   color: gray;
 }
+
+.posts li img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 30px;
+}
+
 /*
 posts
 */
@@ -51,8 +62,12 @@ posts
 form
 */
 .post_form {
-  padding: 20px 40px;
-  border-bottom: 1px solid #ccc;
+  color: rgb(14, 13, 13);
+  padding: 20px 0px;
+  border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  border-right: 3px solid #ccc;
+  border-left: 3px solid #ccc;
 }
 .post_form input {
   width: 70%;
@@ -92,3 +107,15 @@ form
 .posts li .menu a {
   text-decoration: none;
 }
+
+.post_form h2 {
+  color: teal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.post_form .topheader {
+  border-bottom: 1px solid grey;
+  margin-bottom: 17px;
+  margin-left: 17px;
+}
+

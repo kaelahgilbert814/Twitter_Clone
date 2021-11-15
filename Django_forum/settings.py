@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+cloudinary.config(
+    cloud_name="kaecloud",
+    api_key="689398277738585",
+    api_secret="leB99wodBKRfSnZIrxjlAk-fKvI",
+    secure=True,
+)
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
