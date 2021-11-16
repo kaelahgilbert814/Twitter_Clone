@@ -9,10 +9,13 @@
       {% csrf_token %}
       <div class="name-in">
         <input type="text" name="name" placeholder="Name" value="{{post.name}}" />
+        <div class="bod">
+        <input name="body"  value="{{post.body}}" style="border: 0;" />
         </div>
-      <textarea name="body" placeholder="What's on your mind?" value="{{post.body}}" ></textarea>
+        </div>
+      
       {% if post.image.url %}
-      <img class="post-border" src="{{ post.image.url }}" />
+      <img class="post-border" src="{{ post.image.url }}" style="width: 300px; height:300px; border-radius: 10px;" />
       {% endif %}
       <div class="my-icon">
         <input type="file" name="image" />

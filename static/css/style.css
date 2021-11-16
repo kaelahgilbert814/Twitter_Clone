@@ -77,9 +77,23 @@ form
   background: skyblue;
   border-radius:10px;
 }
+.post_form form .name-in .bod input{
+  width:72%;
+  height:65px;
+  margin-bottom:15px; 
+  border:0;
+  background: white;
+  border-radius:10px;
+}
+.post_form form .tweet-bt .my-icon input{
+  border:0;
+  width: 81%;
+  background: white;
+  margin-left:2px;
+}
 .post_form form .tweet-bt input {
   width: 16%;
-  margin-left: 81%;
+   margin-left: 28%; 
   margin-bottom: 10px;
   border-radius: 12px;
   padding: 10px;

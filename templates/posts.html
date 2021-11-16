@@ -9,14 +9,17 @@
       {% csrf_token %}
       <div class="name-in">
       <input type="text" name="name" placeholder="Name" required />
+      <div class="bod">
+        <input name="body" placeholder="What's on your mind" required style="border: 0;" />
+        </div>
       </div>
-      <textarea name="body" placeholder="What's on your mind?" required></textarea>
-      <div class="tweet-bt">
+      <div class="tweet-bt" style="display: flex;">
+        <div class="my-icon">
+          <input type="file" name="image" />
+        </div>
       <input class="button" type="submit" value="Tweet" />
       </div>
-      <div class="my-icon">
-        <input type="file" name="image" />
-      </div>
+     
     </form>
   </section>
   <section class="posts">
@@ -42,7 +45,7 @@
           <img class="post-border" src="{{ post.image.url }}" style="width: 370px; height: 370px;"></br>
           <form id="likes-form" action="{% url 'like_post' post.pk %}" method='POST'>
             {% csrf_token %}
-        <button class="like-button" type="submit", name="post_id", value="{{ post.id }}" href="post_id">
+        <button class="like-button" type="submit", name="post_id", value="{{ post.id }}" href="post_id" style="margin:3%; border:0;">
           &#10084;
         </button>
         {{post.likes}}
