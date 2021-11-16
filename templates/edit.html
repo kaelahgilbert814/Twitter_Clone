@@ -1,19 +1,27 @@
 {% extends "base.html" %}{% block content %} {% load static %}
 <section class="content">
   <section class="post_form">
-    Post Form
+    <div class="head"><img src="/static/img/twitter logo.png">
+
+      <h2>Edit Page</h2></div>
+    
     <form action="/edit/{{post.id}}/" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      <input type="text" name="name" placeholder="Name" value="{{post.name}}"/>
+      <div class="name-in">
+        <input type="text" name="name" placeholder="Name" value="{{post.name}}" />
+        </div>
       <textarea name="body" placeholder="What's on your mind?" value="{{post.body}}" ></textarea>
       {% if post.image.url %}
       <img class="post-border" src="{{ post.image.url }}" />
       {% endif %}
       <div class="my-icon">
         <input type="file" name="image" />
+        <div class="two-btn"><a class="update-button" href="{%  url 'index' %}" style="text-decoration: none; color:black;">Cancel</a>
+        <input class="update-button" type="submit" value="Update" />
       </div>
-      <a class="update-button" href="{%  url 'index' %}" style="text-decoration: none; color:black;">Cancel</a>
-          <input class="update-button" type="submit" value="Update" />
+      </div>
+      
+
     </form>  
   </section>
   <section class="posts">

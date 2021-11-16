@@ -2,14 +2,18 @@
 <section class="content">
   <section class="post_form">
     <div class="topheader">
-    <img src="/static/img/user1.png" style="max-width:10%;">
-    <h2>Post Form</h2>
+    <img src="/static/img/twitter logo.png">
+    <h2>Home</h2>
     </div>
     <form action="/" method="POST" enctype="multipart/form-data" style="margin-left: 16px;">
       {% csrf_token %}
+      <div class="name-in">
       <input type="text" name="name" placeholder="Name" required />
+      </div>
       <textarea name="body" placeholder="What's on your mind?" required></textarea>
-      <input type="submit" value="Post" />
+      <div class="tweet-bt">
+      <input class="button" type="submit" value="Tweet" />
+      </div>
       <div class="my-icon">
         <input type="file" name="image" />
       </div>
@@ -35,7 +39,7 @@
           <div>{{ post.name }}</div>
           <div>{{ post.created_at }}</div>
           <p>{{ post.body }}</p>
-          <img class="post-border" src="{{ post.image.url }}"></br>
+          <img class="post-border" src="{{ post.image.url }}" style="width: 370px; height: 370px;"></br>
           <form id="likes-form" action="{% url 'like_post' post.pk %}" method='POST'>
             {% csrf_token %}
         <button class="like-button" type="submit", name="post_id", value="{{ post.id }}" href="post_id">
